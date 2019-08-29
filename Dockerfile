@@ -24,6 +24,7 @@ RUN apk update && apk add  \
 	    g++ \
 	    make \
 	    autoconf \
+	    postgresql-dev \
 	    && pecl install swoole \
 	    && docker-php-ext-enable swoole \
 	    && pecl install xdebug-2.6.0 \
@@ -44,7 +45,9 @@ RUN  docker-php-ext-configure gd \
 	&& docker-php-ext-install intl \
 	&& docker-php-ext-install bcmath \
 	&& docker-php-ext-install mcrypt \
-	&& docker-php-ext-install opcache
+	&& docker-php-ext-install opcache \
+	&& docker-php-ext-install pgsql \
+	&& docker-php-ext-install pdo_pgsql
 
 #安装PHP COMPOSER
 RUN curl -sS https://getcomposer.org/installer | php \
