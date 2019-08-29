@@ -2,7 +2,7 @@ FROM php:7.1-fpm-alpine
 MAINTAINER qiang <zhiqiangvip999@gmail.com>
 
 #更改国内镜像源
-RUN echo -e "https://mirrors.ustc.edu.cn/alpine/v3.7/main\nhttps://mirrors.ustc.edu.cn/alpine/v3.7/community\n" > /etc/apk/repositories
+#RUN echo -e "https://mirrors.ustc.edu.cn/alpine/v3.7/main\nhttps://mirrors.ustc.edu.cn/alpine/v3.7/community\n" > /etc/apk/repositories
 
 #安装拓展
 RUN apk update && apk add  \
